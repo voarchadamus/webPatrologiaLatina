@@ -1,0 +1,56 @@
+/* ── Index page extras ───────────────────────────────────────── */
+
+.vol-section { margin-bottom: 2.5rem; }
+
+.vol-heading {
+  font-size: var(--fs-lg);
+  font-weight: bold;
+  color: var(--c-accent);
+  margin: 0 0 0.5rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--c-border);
+  scroll-margin-top: 4.6rem;
+}
+
+.vol-heading a { color: inherit; text-decoration: none; }
+.vol-heading a:hover { color: var(--c-text); text-decoration: underline; }
+
+.vol-note {
+  font-size: var(--fs-base);
+  color: var(--c-dim);
+  font-style: italic;
+  margin: 0 0 0.5rem;
+}
+
+.idx-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: var(--fs-base);
+  margin-bottom: 0.5rem;
+}
+
+.idx-table th {
+  text-align: left;
+  font-weight: 600;
+  color: var(--c-toc);
+  padding: 0.22rem 0.5rem;
+  border-bottom: 2px solid var(--c-border-str);
+  background: var(--c-stripe-bg);
+  white-space: nowrap;
+}
+
+.idx-table td {
+  padding: 0.2rem 0.5rem;
+  border-bottom: 1px solid var(--c-border);
+  vertical-align: top;
+}
+
+.idx-table tbody tr:hover td { background: var(--c-toc-hover); }
+
+.idx-table a { color: var(--c-toc); text-decoration: none; }
+.idx-table a:hover { text-decoration: underline; color: var(--c-text); }
+
+.idx-col-volumen { width: 5.5rem; white-space: nowrap; }
+.idx-col-abad    { width: 9rem;   white-space: nowrap; }
+.idx-col-floruit { white-space: nowrap; }
+/* .idx-col-auctor  { width: 10rem; } */

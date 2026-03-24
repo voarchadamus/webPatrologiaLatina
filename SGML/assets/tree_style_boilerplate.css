@@ -1,0 +1,124 @@
+/* ═══════════════════════════════════════════════════════════════
+   tree_style_boilerplate.css — PL tree-view debug inspector style
+   Used by gen_tree_page.py --boilerplate output.
+
+   Shows the raw nested pl-node / pl-run structure with colored
+   borders and backgrounds for easy structural inspection.
+   ═══════════════════════════════════════════════════════════════ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 1rem;
+  font-family: "Cascadia Code", "Fira Code", "Consolas", monospace;
+  font-size: 0.82rem;
+  line-height: 1.35;
+  color: #d4d4d4;
+  background: #1a1a1a;
+}
+
+h1.tree-title {
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: normal;
+  color: #888;
+  margin: 0 0 0.75rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid #333;
+  letter-spacing: 0.04em;
+}
+
+.pl-tree {
+  background: #1e1e1e;
+  padding: 0.75rem 1rem;
+  border: 1px solid #333;
+}
+
+/* ── Container nodes ─────────────────────────────────────────── */
+
+.pl-node {
+  border-left: 2px solid #444;
+  padding: 0.15rem 0 0.15rem 0.6rem;
+  margin: 0.15rem 0;
+}
+
+.node-label {
+  display: inline-block;
+  font-size: 0.68rem;
+  color: #666;
+  margin-bottom: 0.1rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Container border colours by tag */
+.pl-node[data-tag="VOLUME"],
+.pl-node[data-tag="VOLFRONT"],
+.pl-node[data-tag="VOLBODY"],
+.pl-node[data-tag="VOLBACK"]  { border-color: #4a9eff; }
+
+.pl-node[data-tag="GROUP"],
+.pl-node[data-tag="BODY"],
+.pl-node[data-tag="FRONT"],
+.pl-node[data-tag="BACK"]     { border-color: #5577aa; }
+
+.pl-node[data-tag="DOC"]      { border-color: #ff9f40; }
+.pl-node[data-tag="DIV1"]     { border-color: #2ecc71; }
+.pl-node[data-tag="DIV2"]     { border-color: #27ae60; }
+.pl-node[data-tag="P"]        { border-color: #e74c3c; }
+.pl-node[data-tag="HEAD"]     { border-color: #9b59b6; }
+.pl-node[data-tag="NOTE"]     { border-color: #e67e22; }
+.pl-node[data-tag="CAPTION"]  { border-color: #f39c12; }
+.pl-node[data-tag="ITEM"]     { border-color: #d35400; }
+
+.pl-node[data-tag="TBL"]      { border-color: #8e44ad; }
+
+.pl-node[data-tag="SER.TP"],
+.pl-node[data-tag="VOL.TP"],
+.pl-node[data-tag="CONTENTS"],
+.pl-node[data-tag="IMPRINT"]  { border-color: #16a085; }
+
+/* ── Run divs ────────────────────────────────────────────────── */
+
+.pl-run {
+  display: flex;
+  align-items: baseline;
+  padding: 0.08rem 0.4rem;
+  margin: 0.06rem 0;
+  border-radius: 2px;
+}
+
+.run-ord {
+  margin-left: auto;
+  padding-left: 1rem;
+  color: #555;
+  font-size: 0.72em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.pl-run.pl-text-leaf     { background: rgba(255,255,255,0.04); }
+.pl-run.pl-text-parent   { background: rgba(255,255,255,0.07); }
+.pl-run.pl-attr          { background: rgba(80,120,255,0.10); }
+.pl-run.pl-attr-container { background: rgba(80,120,255,0.16); }
+.pl-run.pl-attr-volume   { background: rgba(80,120,255,0.07); }
+.pl-run.pl-col           { background: rgba(53,92,140,0.22); }
+.pl-run.pl-unk           { background: rgba(255,60,60,0.10); }
+
+/* ── Run chrome ──────────────────────────────────────────────── */
+
+.run-tag  { display: inline; color: #666; margin-right: 0.25rem; font-size: 0.75em; }
+.run-sep  { display: inline; color: #444; }
+.run-text { display: inline; color: #d4d4d4; }
+
+/* Highlight rend variants */
+.pl-run.rend-italic    .run-text { color: #a8d0f0; }
+.pl-run.rend-bold      .run-text { color: #f0d080; font-weight: bold; }
+.pl-run.rend-smallcaps .run-text { color: #c0e8c0; font-variant: small-caps; }
+
+/* ── Responsive ──────────────────────────────────────────────── */
+
+@media (max-width: 42rem) {
+  body { margin: 0.5rem; font-size: 0.75rem; }
+  .pl-tree { padding: 0.5rem; }
+}

@@ -1,0 +1,52 @@
+@font-face {
+    font-family: 'Centaur MT Std';
+    src: url('CentaurMTStd-BoldItalic.eot');
+    src: local('Centaur MT Std Bold Italic'), local('CentaurMTStd-BoldItalic'),
+        url('CentaurMTStd-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('CentaurMTStd-BoldItalic.woff2') format('woff2'),
+        url('CentaurMTStd-BoldItalic.woff') format('woff'),
+        url('CentaurMTStd-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Centaur MT Std';
+    src: url('CentaurMTStd.eot');
+    src: local('Centaur MT Std Regular'), local('CentaurMTStd'),
+        url('CentaurMTStd.eot?#iefix') format('embedded-opentype'),
+        url('CentaurMTStd.woff2') format('woff2'),
+        url('CentaurMTStd.woff') format('woff'),
+        url('CentaurMTStd.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Centaur MT Std';
+    src: url('CentaurMTStd-Italic.eot');
+    src: local('Centaur MT Std Italic'), local('CentaurMTStd-Italic'),
+        url('CentaurMTStd-Italic.eot?#iefix') format('embedded-opentype'),
+        url('CentaurMTStd-Italic.woff2') format('woff2'),
+        url('CentaurMTStd-Italic.woff') format('woff'),
+        url('CentaurMTStd-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Centaur MT Std';
+    src: url('CentaurMTStd-Bold.eot');
+    src: local('Centaur MT Std Bold'), local('CentaurMTStd-Bold'),
+        url('CentaurMTStd-Bold.eot?#iefix') format('embedded-opentype'),
+        url('CentaurMTStd-Bold.woff2') format('woff2'),
+        url('CentaurMTStd-Bold.woff') format('woff'),
+        url('CentaurMTStd-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
