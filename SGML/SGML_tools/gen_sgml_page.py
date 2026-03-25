@@ -597,7 +597,7 @@ def wrap_html(
     "if(t==='dark')b.setAttribute('data-theme','dark');"
     "if(f==='centaur')b.setAttribute('data-text-font','centaur');"
     "document.documentElement.style.fontSize=(isNaN(s)?130:s)+'%';"
-    "if(!isNaN(w)&&w!==52)b.style.setProperty('--content-width',w+'rem');"
+    "if(!isNaN(w)&&w!==52)b.style.setProperty('--content-width',w*16+'px');"
     '}catch(e){}}();</script>\n'
     '<nav id="ebt-toc" class="toc-nav" aria-label="Table of contents" hidden></nav>\n'
     '<article class="pl-page">\n'
