@@ -317,8 +317,8 @@
 
   const FONT_SIZE_KEY = "pl-tree-font-size";
   const FONT_SIZE_MIN = 50;
-  const FONT_SIZE_MAX = 200;
-  const FONT_SIZE_DEF = 130;
+  const FONT_SIZE_MAX = 250;
+  const FONT_SIZE_DEF = 150;
 
   function clampSize(v) {
     return Math.min(FONT_SIZE_MAX, Math.max(FONT_SIZE_MIN, v));
@@ -360,7 +360,7 @@
   const WIDTH_KEY = "pl-tree-width";
   const WIDTH_MIN = 20;
   const WIDTH_MAX = 120;
-  const WIDTH_DEF = 52;
+  const WIDTH_DEF = 72;
 
   function clampWidth(v) {
     return Math.min(WIDTH_MAX, Math.max(WIDTH_MIN, v));

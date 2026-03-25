@@ -8,7 +8,7 @@
 <script src="../assets/whitakers-widget.js" defer></script>
 </head>
 <body>
-<script>!function(){try{var b=document.body,ls=localStorage,t=ls.getItem('pl-tree-theme'),f=ls.getItem('pl-tree-text-font'),s=parseInt(ls.getItem('pl-tree-font-size'),10),w=parseInt(ls.getItem('pl-tree-width'),10);if(t==='dark')b.setAttribute('data-theme','dark');if(f==='centaur')b.setAttribute('data-text-font','centaur');document.documentElement.style.fontSize=(isNaN(s)?130:s)+'%';if(!isNaN(w)&&w!==52)b.style.setProperty('--content-width',w*16+'px');}catch(e){}}();</script>
+<script>!function(){try{var b=document.body,ls=localStorage,t=ls.getItem('pl-tree-theme'),f=ls.getItem('pl-tree-text-font'),s=parseInt(ls.getItem('pl-tree-font-size'),10),w=parseInt(ls.getItem('pl-tree-width'),10);if(t==='dark')b.setAttribute('data-theme','dark');if(f==='centaur')b.setAttribute('data-text-font','centaur');document.documentElement.style.fontSize=(isNaN(s)?150:s)+'%';if(!isNaN(w)&&w!==72)b.style.setProperty('--content-width',w*16+'px');}catch(e){}}();</script>
 <nav id="ebt-toc" class="toc-nav" aria-label="Table of contents" hidden></nav>
 <article class="pl-page">
 <header><h1 class="tree-title">036</h1></header>
@@ -29,11 +29,11 @@
   </div>
   <label class="tool-select-wrap" title="Set page font size in percent.">
     <span class="tool-select-text">∑</span>
-    <input type="number" class="tool-size-input" data-size-input min="50" max="200" step="5" value="130" aria-label="Font size percent">
+    <input type="number" class="tool-size-input" data-size-input min="50" max="250" step="5" value="150" aria-label="Font size percent">
   </label>
   <label class="tool-select-wrap" title="Set text column width in rem.">
     <span class="tool-select-text">∮</span>
-    <input type="number" class="tool-size-input" data-width-input min="20" max="120" step="2" value="52" aria-label="Text width in rem">
+    <input type="number" class="tool-size-input" data-width-input min="20" max="120" step="2" value="72" aria-label="Text width in rem">
   </label>
   <button type="button" class="tool-theme-btn" data-scroll-top title="Scroll to top" aria-label="Scroll to top">↑</button>
   <button type="button" class="tool-theme-btn" data-theme-toggle title="Switch between light and dark theme" aria-label="Toggle dark theme">☀</button>
