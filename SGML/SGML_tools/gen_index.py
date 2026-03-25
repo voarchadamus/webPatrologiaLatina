@@ -192,12 +192,12 @@ _PAGE_TOOLS = (
   '  <label class="tool-select-wrap" title="Set page font size in percent.">\n'
   f'    <span class="tool-select-text">{SIZE_SYMBOL}</span>\n'
   '    <input type="number" class="tool-size-input" data-size-input '
-  'min="50" max="200" step="5" value="130" aria-label="Font size percent">\n'
+  'min="50" max="250" step="5" value="150" aria-label="Font size percent">\n'
   '  </label>\n'
   '  <label class="tool-select-wrap" title="Set text column width in rem.">\n'
   f'    <span class="tool-select-text">{WIDTH_SYMBOL}</span>\n'
   '    <input type="number" class="tool-size-input" data-width-input '
-  'min="20" max="120" step="2" value="52" aria-label="Text width in rem">\n'
+  'min="20" max="120" step="2" value="72" aria-label="Text width in rem">\n'
   '  </label>\n'
   '  <button type="button" class="tool-theme-btn" data-theme-toggle '
   'title="Switch between light and dark theme" aria-label="Toggle dark theme">\u2600 Light</button>\n'
@@ -229,8 +229,8 @@ def generate_index(
     "w=parseInt(ls.getItem('pl-tree-width'),10);"
     "if(t==='dark')b.setAttribute('data-theme','dark');"
     "if(f==='centaur')b.setAttribute('data-text-font','centaur');"
-    "document.documentElement.style.fontSize=(isNaN(s)?130:s)+'%';"
-    "if(!isNaN(w)&&w!==52)b.style.setProperty('--content-width',w+'rem');"
+    "document.documentElement.style.fontSize=(isNaN(s)?150:s)+'%';"
+    "if(!isNaN(w)&&w!==72)b.style.setProperty('--content-width',w*16 + 'px');"
     "}catch(e){}}();</script>\n"
   )
   # #ebt-toc must be a direct child of <body> so the CSS grid rule

@@ -380,7 +380,7 @@
     if (rem === WIDTH_DEF) {
       body.style.removeProperty("--content-width");
     } else {
-      body.style.setProperty("--content-width", rem + "rem");
+      body.style.setProperty("--content-width", rem * 16 + "px");
     }
     if (input) input.value = rem;
     if (persist) {
