@@ -510,9 +510,7 @@ def _rewrite_css_urls(css: str, output_path: Path) -> str:
 
 _PAGE_TOOLS = (
   '<div class="page-tools">\n'
-  '  <label class="tool-toggle" data-tool-group="toc" '
-  'title="Show or hide the table of contents.">'
-  f'<input type="checkbox" data-toc-toggle checked> {TOC_SYMBOL}</label>\n'
+  f'  <button type="button" class="tool-theme-btn" data-toc-toggle title="Show or hide the table of contents.">{TOC_SYMBOL}</button>\n'
   '  <div class="tool-cluster tool-cluster-notes">\n'
   '    <label class="tool-toggle" data-tool-group="notes" '
   'title="Expand inline note text for searching and browsing.">'

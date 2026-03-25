@@ -178,8 +178,7 @@ def _ab_ad_cell(ab_ad: str, page_href: str | None) -> str:
 
 _PAGE_TOOLS = (
   '<div class="page-tools">\n'
-  '  <label class="tool-toggle" data-tool-group="toc" title="Show or hide the volume index.">'
-  '<input type="checkbox" data-toc-toggle checked> 🜍</label>\n'
+  '  <button type="button" class="tool-theme-btn" data-toc-toggle title="Show or hide the volume index.">🜍</button>\n'
   '  <div class="tool-cluster tool-cluster-font">\n'
   '    <label class="tool-select-wrap" title="Switch the main reading font.">\n'
   f'      <span class="tool-select-text">{FONT_SYMBOL}</span>\n'

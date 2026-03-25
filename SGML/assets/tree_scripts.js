@@ -257,8 +257,6 @@
 
   function setShowContents(enabled) {
     const tocNav = q("#ebt-toc");
-    const toggle = q("[data-toc-toggle]");
-    if (toggle) toggle.checked = enabled;
     if (tocNav) {
       tocNav.hidden = !enabled || tocNav.childElementCount === 0;
     }
@@ -432,8 +430,10 @@
 
   const tocToggle = q("[data-toc-toggle]");
   if (tocToggle) {
-    tocToggle.addEventListener("change", function () {
-      setShowContents(tocToggle.checked);
+    let tocVisible = true;
+    tocToggle.addEventListener("click", function () {
+      tocVisible = !tocVisible;
+      setShowContents(tocVisible);
     });
   }
 
@@ -637,6 +637,6 @@
   );
   setTheme(readStoredTheme(), false);
   const tocItems = buildToc();
-  setShowContents(tocToggle ? tocToggle.checked : true);
+  setShowContents(true);
   trackActiveTocItem(tocItems);
 })();
