@@ -8,7 +8,12 @@ Parses the TOC HTML files, extracts per-volume chapter entries
 """
 
 from __future__ import annotations
-
+NOTE_SYMBOL = "⁜" # Dotted Cross
+FIGURE_SYMBOL = "▩"
+TOC_SYMBOL = "🜍"
+FONT_SYMBOL = "🜞" # Crocus Of Iron
+SIZE_SYMBOL = "∑"
+WIDTH_SYMBOL = "∮"
 import argparse
 import html
 import re
@@ -174,10 +179,10 @@ def _ab_ad_cell(ab_ad: str, page_href: str | None) -> str:
 _PAGE_TOOLS = (
   '<div class="page-tools">\n'
   '  <label class="tool-toggle" data-tool-group="toc" title="Show or hide the volume index.">'
-  '<input type="checkbox" data-toc-toggle checked> Show ToC</label>\n'
+  '<input type="checkbox" data-toc-toggle checked> 🜍</label>\n'
   '  <div class="tool-cluster tool-cluster-font">\n'
   '    <label class="tool-select-wrap" title="Switch the main reading font.">\n'
-  '      <span class="tool-select-text">Font</span>\n'
+  f'      <span class="tool-select-text">{FONT_SYMBOL}</span>\n'
   '      <select class="tool-select" data-font-select aria-label="Select reading font">\n'
   '        <option value="garamontio" selected>Garamontio</option>\n'
   '        <option value="centaur">Centaur</option>\n'
@@ -185,12 +190,12 @@ _PAGE_TOOLS = (
   '    </label>\n'
   '  </div>\n'
   '  <label class="tool-select-wrap" title="Set page font size in percent.">\n'
-  '    <span class="tool-select-text">Size</span>\n'
+  f'    <span class="tool-select-text">{SIZE_SYMBOL}</span>\n'
   '    <input type="number" class="tool-size-input" data-size-input '
   'min="50" max="200" step="5" value="130" aria-label="Font size percent">\n'
   '  </label>\n'
   '  <label class="tool-select-wrap" title="Set text column width in rem.">\n'
-  '    <span class="tool-select-text">Width</span>\n'
+  f'    <span class="tool-select-text">{WIDTH_SYMBOL}</span>\n'
   '    <input type="number" class="tool-size-input" data-width-input '
   'min="20" max="120" step="2" value="52" aria-label="Text width in rem">\n'
   '  </label>\n'

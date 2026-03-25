@@ -294,7 +294,7 @@
     const dark = value === "dark";
     body.setAttribute("data-theme", dark ? "dark" : "light");
     const btn = q("[data-theme-toggle]");
-    if (btn) btn.textContent = dark ? "☾" : "☀";
+    if (btn) btn.textContent = dark ? "☽" : "☉";
     if (persist) writeStoredTheme(dark ? "dark" : "light");
   }
 
@@ -468,18 +468,18 @@
   }
 
   function scrollTocItemIntoView(item) {
-    const tocNav = q("#ebt-toc");
-    if (!tocNav) return;
+    const tocList = q("#ebt-toc-list");
+    if (!tocList) return;
     const itemRect = item.getBoundingClientRect();
-    const navRect = tocNav.getBoundingClientRect();
-    if (itemRect.top < navRect.top) {
-      tocNav.scrollBy({
-        top: itemRect.top - navRect.top - 8,
+    const listRect = tocList.getBoundingClientRect();
+    if (itemRect.top < listRect.top) {
+      tocList.scrollBy({
+        top: itemRect.top - listRect.top - 8,
         behavior: "instant",
       });
-    } else if (itemRect.bottom > navRect.bottom) {
-      tocNav.scrollBy({
-        top: itemRect.bottom - navRect.bottom + 8,
+    } else if (itemRect.bottom > listRect.bottom) {
+      tocList.scrollBy({
+        top: itemRect.bottom - listRect.bottom + 8,
         behavior: "instant",
       });
     }
@@ -527,15 +527,12 @@
     toggle.className = "toc-toggle";
     toggle.setAttribute("aria-expanded", "true");
     toggle.setAttribute("aria-controls", list.id);
-    toggle.innerHTML =
-      'Contents <span class="toc-toggle-arrow" aria-hidden="true">\u25be</span>';
+    toggle.textContent = "ToC";
 
     toggle.addEventListener("click", function () {
       const expanded = toggle.getAttribute("aria-expanded") === "true";
       const nextExpanded = !expanded;
       toggle.setAttribute("aria-expanded", String(nextExpanded));
-      const arrow = q(".toc-toggle-arrow", toggle);
-      if (arrow) arrow.textContent = nextExpanded ? "\u25be" : "\u25b8";
       list.hidden = !nextExpanded;
     });
 

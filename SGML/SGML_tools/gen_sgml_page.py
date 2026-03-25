@@ -25,7 +25,12 @@ Usage
 """
 
 from __future__ import annotations
-
+NOTE_SYMBOL = "⁜" # Dotted Cross
+FIGURE_SYMBOL = "▩"
+TOC_SYMBOL = "🜍"
+FONT_SYMBOL = "🜞" # Crocus Of Iron
+SIZE_SYMBOL = "∑"
+WIDTH_SYMBOL = "∮"
 import argparse
 import html
 import os
@@ -138,7 +143,7 @@ class Renderer:
 
   def _note_strings(self, label: str, note_type: str) -> tuple[str, str]:
     chip_title = (note_type and label and f'{note_type} {label}') or note_type or (label and f'Note {label}') or 'Note'
-    button_text = f'⁜ {label}' if label else '⁜'
+    button_text = f'{NOTE_SYMBOL} {label}' if label else NOTE_SYMBOL
     return chip_title, button_text
 
   # ── inline element rendering ──────────────────────────────────────────────
@@ -254,7 +259,7 @@ class Renderer:
     fig_path   = self._resolve_figure(image_id) if image_id else None
     label_h    = e(text_label)
     chip_title = e(f'Figure {image_id} {text_label}') if image_id else label_h
-    chip_text  = f'▩ {text_label}'
+    chip_text  = f'{FIGURE_SYMBOL} {text_label}'
 
     if fig_path:
       fp = e(fig_path)
@@ -507,19 +512,19 @@ _PAGE_TOOLS = (
   '<div class="page-tools">\n'
   '  <label class="tool-toggle" data-tool-group="toc" '
   'title="Show or hide the table of contents.">'
-  '<input type="checkbox" data-toc-toggle checked> Show ToC</label>\n'
+  f'<input type="checkbox" data-toc-toggle checked> {TOC_SYMBOL}</label>\n'
   '  <div class="tool-cluster tool-cluster-notes">\n'
   '    <label class="tool-toggle" data-tool-group="notes" '
   'title="Expand inline note text for searching and browsing.">'
-  '<input type="checkbox" data-note-toggle> Show all notes</label>\n'
+  f'<input type="checkbox" data-note-toggle> {NOTE_SYMBOL}</label>\n'
   '  </div>\n'
   '  <label class="tool-toggle" data-tool-group="figures" '
   'title="Expand inline figures for easier comparison while keeping popup access.">'
-  '<input type="checkbox" data-ornament-toggle> Show all figures</label>\n'
+  f'<input type="checkbox" data-ornament-toggle> {FIGURE_SYMBOL}</label>\n'
   '  <div class="tool-cluster tool-cluster-font">\n'
   '    <label class="tool-select-wrap" '
   'title="Switch the main non-Greek reading font.">\n'
-  '      <span class="tool-select-text">Font</span>\n'
+  f'      <span class="tool-select-text">{FONT_SYMBOL}</span>\n'
   '      <select class="tool-select" data-font-select '
   'aria-label="Select reading font">\n'
   '        <option value="garamontio" selected>Garamontio</option>\n'
@@ -528,12 +533,12 @@ _PAGE_TOOLS = (
   '    </label>\n'
   '  </div>\n'
   '  <label class="tool-select-wrap" title="Set page font size in percent.">\n'
-  '    <span class="tool-select-text">Size</span>\n'
+  f'    <span class="tool-select-text">{SIZE_SYMBOL}</span>\n'
   '    <input type="number" class="tool-size-input" data-size-input '
   'min="50" max="200" step="5" value="130" aria-label="Font size percent">\n'
   '  </label>\n'
   '  <label class="tool-select-wrap" title="Set text column width in rem.">\n'
-  '    <span class="tool-select-text">Width</span>\n'
+  f'    <span class="tool-select-text">{WIDTH_SYMBOL}</span>\n'
   '    <input type="number" class="tool-size-input" data-width-input '
   'min="20" max="120" step="2" value="52" aria-label="Text width in rem">\n'
   '  </label>\n'
@@ -581,6 +586,8 @@ def wrap_html(
     '  <meta charset="utf-8">\n'
     f'  <title>{e(title)}</title>\n'
     f'{css_block}'
+    '<link rel="stylesheet" href="../assets/whitakers-widget.css">\n'
+    '<script src="../assets/whitakers-widget.js" defer></script>\n'
     '</head>\n'
     '<body>\n'
     '<script>!function(){try{var b=document.body,ls=localStorage,'
